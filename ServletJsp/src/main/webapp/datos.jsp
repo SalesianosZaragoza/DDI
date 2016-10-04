@@ -8,6 +8,7 @@
 </head>
 <body>
 	<form action="hello" method="post">
+		<input type="text" name="nombre"> 
 		<input type="submit">
 	</form>
 	</body>

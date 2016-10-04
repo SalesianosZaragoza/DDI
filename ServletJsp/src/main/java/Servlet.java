@@ -11,14 +11,12 @@ public class Servlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String parameter = req.getParameter("nombre");
-		redirect(req,resp);
-		super.doPost(req, resp);
+		redirect(req,resp);	
 	}
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		redirect(req,resp);
-		super.doGet(req, resp);
 	}
 	
 

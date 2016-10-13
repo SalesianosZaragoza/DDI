@@ -12,7 +12,7 @@
 
     <servlet>
         <servlet-name>HelloServlet</servlet-name>
-        <servlet-class>Servlet</servlet-class>
+        <servlet-class>es.salesianos.servlet.Servlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

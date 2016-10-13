@@ -8,7 +8,14 @@
 </head>
 <body>
 	<form action="hello" method="post">
-		<input type="text" name="nombre"> 
+		<span>nombre:</span> 
+		
+		<input type="text" name="nombre"> <br/>
+		<span>fecha nac:</span> 
+		
+		<input type="text" name="fnac"><br/>
+		<span>curso:</span> 
+		<input type="text" name="curso"> <br/>
 		<input type="submit">
 	</form>
 	</body>

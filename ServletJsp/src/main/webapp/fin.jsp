@@ -8,5 +8,6 @@
 </head>
 <body>
 <b><%= request.getParameter("nombre") %></b>
+<b><%= request.getAttribute("age") %></b>
 </body>
 </html>

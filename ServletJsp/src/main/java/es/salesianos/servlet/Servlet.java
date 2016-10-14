@@ -23,6 +23,7 @@ public class Servlet extends HttpServlet{
 		String curso = req.getParameter("curso");
 		DateConverter converter = new DateConverter();
 		Integer yearNac = converter.getAge(req.getParameter("fnac"));
+		req.setAttribute("age", yearNac.toString());
 		redirect(req,resp);
 		
 	}

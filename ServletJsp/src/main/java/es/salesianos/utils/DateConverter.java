@@ -8,18 +8,21 @@ import java.util.GregorianCalendar;
 
 public class DateConverter {
 
-	public Integer getAge(String paramFecha) {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy");
-		try {
-			Date date = sdf.parse(paramFecha);
-			Calendar calendar = new GregorianCalendar();
-			calendar.setTime(date);
-			Calendar calendarActual = new GregorianCalendar();
-			return calendarActual.get(Calendar.YEAR) - calendar.get(Calendar.YEAR);
-		} catch (ParseException e) {
-			new RuntimeException(e);
+	public Integer getAge(Date date) {
+		Integer age = null;
+		Calendar calendar = new GregorianCalendar();
+		calendar.setTime(date);
+		Calendar calendarActual = new GregorianCalendar();
+		age = calendarActual.get(Calendar.YEAR) - calendar.get(Calendar.YEAR);
+		if (calendarActual.get(Calendar.MONTH) > calendar.get(Calendar.MONTH)) {
+			age = age - 1;
 		}
-		return null;
+		if (calendarActual.get(Calendar.MONTH) == calendar.get(Calendar.MONTH)) {
+			if (calendarActual.get(Calendar.DAY_OF_MONTH) > calendar.get(Calendar.DAY_OF_MONTH)) {
+				age = age - 1;
+			}
+		}
+		return age;
 	}
-	
+
 }

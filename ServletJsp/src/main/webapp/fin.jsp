@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<b><%= request.getParameter("nombre") %></b>
-<b><%= request.getAttribute("age") %></b>
+<b><%= request.getParameter("name") %></b>
+<b><%= request.getAttribute("dateOfBirth") %></b>
 </body>
 </html>

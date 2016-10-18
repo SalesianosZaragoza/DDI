@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="hello" method="post">
+	<form action="welcome" method="post">
 		<span>nombre:</span> 
 		
 		<input type="text" name="name"> <br/>

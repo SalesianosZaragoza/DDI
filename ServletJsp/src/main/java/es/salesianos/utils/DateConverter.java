@@ -14,11 +14,11 @@ public class DateConverter {
 		calendar.setTime(date);
 		Calendar calendarActual = new GregorianCalendar();
 		age = calendarActual.get(Calendar.YEAR) - calendar.get(Calendar.YEAR);
-		if (calendarActual.get(Calendar.MONTH) > calendar.get(Calendar.MONTH)) {
+		if (calendarActual.get(Calendar.MONTH) < calendar.get(Calendar.MONTH)) {
 			age = age - 1;
 		}
 		if (calendarActual.get(Calendar.MONTH) == calendar.get(Calendar.MONTH)) {
-			if (calendarActual.get(Calendar.DAY_OF_MONTH) > calendar.get(Calendar.DAY_OF_MONTH)) {
+			if (calendarActual.get(Calendar.DAY_OF_MONTH) < calendar.get(Calendar.DAY_OF_MONTH)) {
 				age = age - 1;
 			}
 		}

@@ -28,23 +28,23 @@ public class DateConverterTest {
 		calendarTest = calendarActual.getInstance(); 
 		calendarTest.add(Calendar.YEAR, -10);
 		calendarTest.add(Calendar.MONTH, -1);
-		Assert.assertEquals(9, converter.getAge(calendarTest.getTime()).intValue());
+		Assert.assertEquals(10, converter.getAge(calendarTest.getTime()).intValue());
 		
 		calendarTest = calendarActual.getInstance(); 
 		calendarTest.add(Calendar.YEAR, -10);
 		calendarTest.add(Calendar.MONTH, +1);
-		Assert.assertEquals(10, converter.getAge(calendarTest.getTime()).intValue());
+		Assert.assertEquals(9, converter.getAge(calendarTest.getTime()).intValue());
 
 		calendarTest = calendarActual.getInstance(); 
 		calendarTest.add(Calendar.YEAR, -10);
 		calendarTest.add(Calendar.DAY_OF_MONTH, +1);
-		Assert.assertEquals(10, converter.getAge(calendarTest.getTime()).intValue());
+		Assert.assertEquals(9, converter.getAge(calendarTest.getTime()).intValue());
 		
 		
 		calendarTest = calendarActual.getInstance(); 
 		calendarTest.add(Calendar.YEAR, -10);
 		calendarTest.add(Calendar.DAY_OF_MONTH, -1);
-		Assert.assertEquals(9, converter.getAge(calendarTest.getTime()).intValue());
+		Assert.assertEquals(10, converter.getAge(calendarTest.getTime()).intValue());
 		
 	}
 

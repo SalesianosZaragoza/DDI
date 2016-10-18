@@ -8,6 +8,6 @@
 </head>
 <body>
 <b><%= request.getParameter("name") %></b>
-<b><%= request.getAttribute("dateOfBirth") %></b>
+<b><%= request.getAttribute("age") %></b>
 </body>
 </html>

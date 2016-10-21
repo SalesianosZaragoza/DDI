@@ -13,6 +13,7 @@
 
     <modules>
         <module>ServletJsp</module>
+        <module>Jdbc</module>
     </modules>
 
 

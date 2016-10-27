@@ -16,6 +16,11 @@
     </servlet>
     
     <servlet>
+        <servlet-name>listado</servlet-name>
+        <servlet-class>es.salesianos.servlet.ListadoServlet</servlet-class>
+    </servlet>
+    
+    <servlet>
         <servlet-name>motos</servlet-name>
         <servlet-class>es.salesianos.servlet.MotoServlet</servlet-class>
     </servlet>
@@ -29,6 +34,12 @@
     <servlet-mapping>
         <servlet-name>motos</servlet-name>
         <url-pattern>inscribirMotos</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet-mapping>
+        <servlet-name>listado</servlet-name>
+        <url-pattern>cargarListado</url-pattern>
     </servlet-mapping>
     
     <welcome-file-list>

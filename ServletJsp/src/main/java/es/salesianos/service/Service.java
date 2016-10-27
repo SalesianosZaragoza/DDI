@@ -2,6 +2,7 @@ package es.salesianos.service;
 
 import java.sql.Connection;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,8 +16,8 @@ import es.salesianos.utils.DateConverter;
 public class Service {
 	
 	
+	private Repository repository = new Repository();
 	private DateConverter converter = new DateConverter();
-	private ConnectionManager manager = new ConnectionH2();
 	
 	
 	public User assembleUserFromRequest(HttpServletRequest req) {
@@ -24,7 +25,6 @@ public class Service {
 	}
 
 	public void insertOrUpdate(User userFormulario) {
-		Repository repository = new Repository();
 		User userInDatabase = repository.search(userFormulario);
 		if(null == userInDatabase){
 			repository.insert(userFormulario);
@@ -39,17 +39,24 @@ public class Service {
 	}
 	
 	
+	public List<User> listAllUsers() {
+		return repository.searchAll();
+	}
+	
+	
 	public DateConverter getConverter() {
 		return converter;
 	}
 	public void setConverter(DateConverter converter) {
 		this.converter = converter;
 	}
-	public ConnectionManager getManager() {
-		return manager;
+
+	public Repository getRepository() {
+		return repository;
 	}
-	public void setManager(ConnectionManager manager) {
-		this.manager = manager;
+
+	public void setRepository(Repository repository) {
+		this.repository = repository;
 	}
 	
 	

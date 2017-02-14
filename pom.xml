@@ -14,6 +14,7 @@
     <modules>
         <module>ServletJsp</module>
         <module>Jdbc</module>
+        <module>interfaces</module>
     </modules>
 
 

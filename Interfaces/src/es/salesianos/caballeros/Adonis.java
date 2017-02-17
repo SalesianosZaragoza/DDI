@@ -20,4 +20,9 @@ public class Adonis extends Machistas {
 
 	}
 
+	@Override
+	public String seDefine() {
+		return getClass().getName();
+	}
+
 }

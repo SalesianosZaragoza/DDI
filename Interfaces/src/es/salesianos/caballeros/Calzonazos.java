@@ -2,16 +2,18 @@ package es.salesianos.caballeros;
 
 import es.salesianos.damas.Mujeres;
 
-public class Calzonazos implements Hombres {
+public class Calzonazos implements Hombres, Reflexion {
 
-	@Override
 	public boolean isDandoMal() {
 		return false;
 	}
 
-	@Override
 	public void cuidan(Mujeres mujeres) {
 		System.out.println("La cuido como un tesoro");
+	}
+
+	public String seDefine() {
+		return this.getClass().getName();
 	}
 
 }

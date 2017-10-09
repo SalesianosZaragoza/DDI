@@ -1,4 +1,4 @@
-import com.daoimpl.PersonDaoImpl;
+import com.daoimpl.PersonDaoH2Impl;
 import com.entities.Person;
 import com.util.ConnectionConfiguration;
 
@@ -9,7 +9,7 @@ import java.util.List;
 public class App {
 
 	public static void main(String [] args) {
-		PersonDaoImpl pdi = new PersonDaoImpl();
+		PersonDaoH2Impl pdi = new PersonDaoH2Impl();
 
 		/**Create table**/
 		pdi.createPersonTable();

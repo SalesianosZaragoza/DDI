@@ -1,8 +1,8 @@
 package com.dao;
 
-import com.entities.Person;
-
 import java.util.List;
+
+import com.entities.Person;
 
 public interface PersonDao {
 
@@ -17,4 +17,5 @@ public interface PersonDao {
 	void delete(int id);
 
 	void update(Person person,int id);
+
 }

@@ -1,14 +1,19 @@
 package com.daoimpl;
 
-import com.dao.PersonDao;
-import com.entities.Person;
-import com.util.ConnectionConfiguration;
-
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonDaoImpl implements PersonDao {
+import com.dao.PersonDao;
+import com.dao.PersonPlusDao;
+import com.entities.Person;
+import com.util.ConnectionConfiguration;
+
+public class PersonDaoH2Impl implements PersonDao, PersonPlusDao {
 
 	public void createPersonTable() {
 		Connection connection = null;
@@ -19,24 +24,30 @@ public class PersonDaoImpl implements PersonDao {
 			statement = connection.createStatement();
 			statement.execute("CREATE TABLE IF NOT EXISTS person (id bigint auto_increment," +
 					"first_name varchar(55), last_name varchar(55))");
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			if (statement != null) {
-				try {
-					statement.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
+			closeStatement(statement);
+			closeConnection(connection);
+		}
+	}
 
-			if (connection != null) {
-				try {
-					connection.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
+	private void closeConnection(Connection connection) {
+		if (connection != null) {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	private void closeStatement(Statement statement) {
+		if (statement != null) {
+			try {
+				statement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
 			}
 		}
 	}
@@ -58,20 +69,18 @@ public class PersonDaoImpl implements PersonDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			if (preparedStatement != null) {
-				try {
-					preparedStatement.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
+			closePreparedStatement(preparedStatement);
 
-			if (connection != null) {
-				try {
-					connection.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
+			closeConnection(connection);
+		}
+	}
+
+	private void closePreparedStatement(PreparedStatement preparedStatement) {
+		if (preparedStatement != null) {
+			try {
+				preparedStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
 			}
 		}
 	}
@@ -97,30 +106,26 @@ public class PersonDaoImpl implements PersonDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			if (resultSet != null) {
-				try {
-					resultSet.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if (preparedStatement != null) {
-				try {
-					preparedStatement.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if (connection != null) {
-				try {
-					connection.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
+			closeResultset(resultSet);
+			closePreparedStatement(preparedStatement);
+			closeConnection(connection);
 		}
 
 		return person;
+	}
+
+	public Person selectByLastName(String lastname) {
+		return null;
+	}
+
+	private void closeResultset(ResultSet resultSet) {
+		if (resultSet != null) {
+			try {
+				resultSet.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	public List<Person> selectAll() {
@@ -146,27 +151,9 @@ public class PersonDaoImpl implements PersonDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			if (resultSet != null) {
-				try {
-					resultSet.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if (statement != null) {
-				try {
-					statement.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if (connection != null) {
-				try {
-					connection.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
+			closeResultset(resultSet);
+			closeStatement(statement);
+			closeConnection(connection);
 		}
 
 		return persons;
@@ -187,20 +174,8 @@ public class PersonDaoImpl implements PersonDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			if (preparedStatement != null) {
-				try {
-					preparedStatement.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if (connection != null) {
-				try {
-					connection.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
+			closePreparedStatement(preparedStatement);
+			closeConnection(connection);
 		}
 	}
 
@@ -224,20 +199,8 @@ public class PersonDaoImpl implements PersonDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			if (preparedStatement != null) {
-				try {
-					preparedStatement.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-			if (connection != null) {
-				try {
-					connection.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
+			closePreparedStatement(preparedStatement);
+			closeConnection(connection);
 		}
 	}
 }

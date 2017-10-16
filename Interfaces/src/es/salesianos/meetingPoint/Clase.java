@@ -31,7 +31,8 @@ public class Clase implements PuntoReunion {
 
 	private void definir(Object persona) {
 		if (persona instanceof Reflexion) {
-			((Reflexion) persona).seDefine();
+			System.out.println(((Reflexion) persona).seDefine());
+
 		}
 	}
 

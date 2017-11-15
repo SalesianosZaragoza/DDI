@@ -1,49 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_1.xsd"
-    version="3.1">
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_1.xsd"
+	version="3.1">
 
-    <display-name>HelloWorld Application</display-name>
-    <description>
-        This is a simple web application with a source code organization
-        based on the recommendations of the Application Developer's Guide.
-    </description>
+	<display-name>HelloWorld Application</display-name>
+	<description>
+		This is a simple web application with a source code
+		organization
+		based on the recommendations of the Application
+		Developer's Guide.
+	</description>
 
-    <servlet>
-        <servlet-name>WelcomeServlet</servlet-name>
-        <servlet-class>es.salesianos.servlet.WelcomeServlet</servlet-class>
-    </servlet>
-    
-    <servlet>
-        <servlet-name>listado</servlet-name>
-        <servlet-class>es.salesianos.servlet.ListadoServlet</servlet-class>
-    </servlet>
-    
-    <servlet>
-        <servlet-name>motos</servlet-name>
-        <servlet-class>es.salesianos.servlet.MotoServlet</servlet-class>
-    </servlet>
+	<servlet>
+		<servlet-name>WelcomeServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.WelcomeServlet</servlet-class>
+	</servlet>
 
-    <servlet-mapping>
-        <servlet-name>WelcomeServlet</servlet-name>
-        <url-pattern>welcome</url-pattern>
-    </servlet-mapping>
-    
-    
-    <servlet-mapping>
-        <servlet-name>motos</servlet-name>
-        <url-pattern>inscribirMotos</url-pattern>
-    </servlet-mapping>
-    
-    
-    <servlet-mapping>
-        <servlet-name>listado</servlet-name>
-        <url-pattern>cargarListado</url-pattern>
-    </servlet-mapping>
-    
-    <welcome-file-list>
-    	<welcome-file>datos.jsp</welcome-file>
+	<servlet>
+		<servlet-name>listado</servlet-name>
+		<servlet-class>es.salesianos.servlet.ListadoServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>motos</servlet-name>
+		<servlet-class>es.salesianos.servlet.MotoServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>WelcomeServlet</servlet-name>
+		<url-pattern>welcome</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>motos</servlet-name>
+		<url-pattern>inscribirMotos</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>listado</servlet-name>
+		<url-pattern>cargarListado</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>datos.jsp</welcome-file>
 	</welcome-file-list>
 
 </web-app>     

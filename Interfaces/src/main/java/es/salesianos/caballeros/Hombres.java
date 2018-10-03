@@ -1,13 +1,14 @@
 package es.salesianos.caballeros;
 
+import java.io.IOException;
+
 import es.salesianos.damas.Mujeres;
 
 public interface Hombres {
 
-	public boolean isDandoMal();
-
-	public void cuidan(Mujeres mujeres);
-
+	void hablar(Mujeres mujer) ;
+	
+	boolean aceptar(Mujeres mujer);
 
 
 }

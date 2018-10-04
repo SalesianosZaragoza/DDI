@@ -8,7 +8,7 @@ import es.salesianos.damas.Mujeres;
 public class Bar implements PuntoReunion {
 
 	public void reunen(List<Hombres> hombres, List<Mujeres> mujeres) {
-		// TODO Auto-generated method stub
+	
 
 	}
 

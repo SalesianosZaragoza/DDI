@@ -84,9 +84,29 @@ public class Repository {
 
 	public void update(User userFormulario) {
 		Connection conn = manager.open(jdbcUrl);
-		//TODO rellename con codigo 
-		// sql que  inserta un usuario
-		manager.close(conn);
+
+		// codigo sql que  inserta un usuario :P
+		PreparedStatement preparedStatement = null;
+		try {
+			preparedStatement = conn.prepareStatement("UPDATE USER SET name = ?,course = ? ,dateOfBirth = ? WHERE name = ?");
+			preparedStatement.setString(1, userFormulario.getName());
+			preparedStatement.setString(2, userFormulario.getCourse());
+			preparedStatement.setDate(3, new java.sql.Date(userFormulario.getDateOfBirth().getTime()));
+			//Añado esta linea por la condicion , cuarto interrogante--> DUDA
+			preparedStatement.setString(4, userFormulario.getName());
+
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}finally {
+			close(preparedStatement);
+      manager.close(conn);
+		}
+		
+
+
+		
 	}
 
 	public List<User> searchAll() {
@@ -112,10 +132,9 @@ public class Repository {
 		}finally {
 			close(resultSet);
 			close(prepareStatement);
+      manager.close(conn);
 		}
 		
-		
-		manager.close(conn);
 		return listUsers;
 	}
 

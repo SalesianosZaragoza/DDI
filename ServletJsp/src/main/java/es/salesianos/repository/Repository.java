@@ -84,7 +84,8 @@ public class Repository {
 
 	public void update(User userFormulario) {
 		Connection conn = manager.open(jdbcUrl);
-		// codigo sql que  inserta un usuario
+		//TODO rellename con codigo 
+		// sql que  inserta un usuario
 		manager.close(conn);
 	}
 

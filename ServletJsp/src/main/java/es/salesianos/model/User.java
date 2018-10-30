@@ -38,6 +38,7 @@ public class User {
 	public void setDateOfBirth(String dateOfBirth) {
 
 		try {
+			//yyyy-MM-dd
 			this.dateOfBirth = sdf.parse(dateOfBirth);
 		} catch (ParseException e) {
 			throw new RuntimeException(e);

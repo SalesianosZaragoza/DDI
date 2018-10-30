@@ -45,6 +45,8 @@
 				<td><c:out value="${user1.name}"/> </td>
 				<td><c:out value="${user1.dateOfBirth}"/> </td>
 				<td><c:out value="${user1.course}"/> </td>
+				<td><a href="/edit?id=${user1.name}">EDITAR</a> </td>
+				
 	    	</tr>
 		</c:forEach>
 	</tbody>
@@ -72,20 +74,20 @@
 <%
 
 if(null != users && !users.isEmpty()){
-for (User user2 : users) {
-	out.println("<tr>");
-	out.println("<td>");
-	out.println(user2.getName());
-	out.println("</td>");
-	out.println("<td>");
-	out.println(user2.getCourse());
-	out.println("</td>");
-	out.println("<td>");
-	out.println(user2.getDateOfBirth());
-	out.println("</td>");
-	out.println("</tr>");
-}
-	
+	for (User user2 : users) {
+		out.println("<tr>");
+		out.println("<td>");
+		out.println(user2.getName());
+		out.println("</td>");
+		out.println("<td>");
+		out.println(user2.getCourse());
+		out.println("</td>");
+		out.println("<td>");
+		out.println(user2.getDateOfBirth());
+		out.println("</td>");
+		out.println("</tr>");
+	}
+		
 }
 %>
 </tbody>

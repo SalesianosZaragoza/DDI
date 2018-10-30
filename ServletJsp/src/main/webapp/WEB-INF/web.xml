@@ -4,16 +4,16 @@
 	version="3.1">
 
 	<display-name>HelloWorld Application</display-name>
-	<description>
-		This is a simple web application with a source code
-		organization
-		based on the recommendations of the Application
-		Developer's Guide.
-	</description>
+	<description></description>
 
 	<servlet>
 		<servlet-name>WelcomeServlet</servlet-name>
 		<servlet-class>es.salesianos.servlet.WelcomeServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>EditServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.EditServlet</servlet-class>
 	</servlet>
 
 	<servlet>
@@ -29,6 +29,11 @@
 	<servlet-mapping>
 		<servlet-name>WelcomeServlet</servlet-name>
 		<url-pattern>welcome</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>EditServlet</servlet-name>
+		<url-pattern>/edit</url-pattern>
 	</servlet-mapping>
 
 

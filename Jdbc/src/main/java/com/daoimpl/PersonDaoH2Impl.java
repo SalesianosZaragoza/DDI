@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import com.dao.PersonDao;
 import com.dao.PersonPlusDao;
@@ -28,6 +29,7 @@ public class PersonDaoH2Impl implements PersonDao, PersonPlusDao {
 			e.printStackTrace();
 		} finally {
 			closeStatement(statement);
+			
 			closeConnection(connection);
 		}
 	}
@@ -85,8 +87,9 @@ public class PersonDaoH2Impl implements PersonDao, PersonPlusDao {
 		}
 	}
 
-	public Person selectById(int id) {
-		Person person = new Person();
+	public Optional<Person> selectById(int id) {
+		Person person = null;
+		Optional<Person> optional= null;
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
@@ -98,10 +101,13 @@ public class PersonDaoH2Impl implements PersonDao, PersonPlusDao {
 			resultSet = preparedStatement.executeQuery();
 
 			while (resultSet.next()) {
+				person = new Person();
 				person.setId(resultSet.getInt("id"));
 				person.setFirstName(resultSet.getString("first_name"));
 				person.setLastName(resultSet.getString("last_name"));
+				optional = Optional.of(person);
 			}
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -111,7 +117,7 @@ public class PersonDaoH2Impl implements PersonDao, PersonPlusDao {
 			closeConnection(connection);
 		}
 
-		return person;
+		return optional;
 	}
 
 	public Person selectByLastName(String lastname) {
@@ -133,8 +139,9 @@ public class PersonDaoH2Impl implements PersonDao, PersonPlusDao {
 		Connection connection = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
-
-		try {
+		
+			
+			try {
 			connection = ConnectionConfiguration.getConnection();
 			statement = connection.createStatement();
 			resultSet = statement.executeQuery("SELECT * FROM person");

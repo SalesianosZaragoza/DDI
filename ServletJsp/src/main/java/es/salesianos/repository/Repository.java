@@ -84,6 +84,7 @@ public class Repository {
 
 	public void update(User userFormulario) {
 		Connection conn = manager.open(jdbcUrl);
+
 		// codigo sql que  inserta un usuario :P
 		PreparedStatement preparedStatement = null;
 		try {
@@ -100,10 +101,12 @@ public class Repository {
 			throw new RuntimeException(e);
 		}finally {
 			close(preparedStatement);
+      manager.close(conn);
 		}
 		
 
-		manager.close(conn);
+
+		
 	}
 
 	public List<User> searchAll() {
@@ -129,10 +132,9 @@ public class Repository {
 		}finally {
 			close(resultSet);
 			close(prepareStatement);
+      manager.close(conn);
 		}
 		
-		
-		manager.close(conn);
 		return listUsers;
 	}
 

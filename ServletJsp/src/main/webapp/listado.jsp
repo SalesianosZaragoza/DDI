@@ -37,6 +37,7 @@
 			<td>Nombre</td>
 			<td>Fecha</td>
 			<td>Curso</td>
+			<td>Opciones</td>
 		</tr>
 	</thead>
 	<tbody>

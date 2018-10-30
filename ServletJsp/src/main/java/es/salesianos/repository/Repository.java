@@ -27,9 +27,9 @@ public class Repository {
 			resultSet = prepareStatement.executeQuery();
 			while(resultSet.next()){
 				userInDatabase = new User();
-				userInDatabase.setName(resultSet.getString(0));
-				userInDatabase.setDateOfBirth(resultSet.getString(1));
-				userInDatabase.setCourse(resultSet.getString(2));
+				userInDatabase.setName(resultSet.getString(1));
+				userInDatabase.setDateOfBirth(resultSet.getString(2));
+				userInDatabase.setCourse(resultSet.getString(3));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

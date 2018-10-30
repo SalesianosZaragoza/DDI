@@ -41,7 +41,8 @@ public class User {
 			//yyyy-MM-dd
 			this.dateOfBirth = sdf.parse(dateOfBirth);
 		} catch (ParseException e) {
-			throw new RuntimeException(e);
+			this.dateOfBirth = new Date();
+			//throw new RuntimeException(e);
 		}
 	}
 

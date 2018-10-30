@@ -15,12 +15,13 @@ public class EditServlet extends HttpServlet {
 	Repository repo = new Repository();
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String name = req.getParameter("name");
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String name = req.getParameter("id");
 		User userFormulario = new User();
 		userFormulario.setName(name);
 		User search = repo.search(userFormulario);
 		req.setAttribute("editableUser", search);
+		redirect(req, resp);
 	}
 	
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {

@@ -12,12 +12,12 @@ import es.salesianos.connection.ConnectionManager;
 import es.salesianos.model.User;
 
 public class Repository {
-	
+
 	private static final String jdbcUrl = "jdbc:h2:file:./src/main/resources/test";
 	ConnectionManager manager = new ConnectionH2();
 
 	public User search(User userFormulario) {
-		User userInDatabase= null;
+		User userInDatabase = null;
 		ResultSet resultSet = null;
 		PreparedStatement prepareStatement = null;
 		Connection conn = manager.open(jdbcUrl);
@@ -25,39 +25,44 @@ public class Repository {
 			prepareStatement = conn.prepareStatement("SELECT * FROM USER WHERE name = ?");
 			prepareStatement.setString(1, userFormulario.getName());
 			resultSet = prepareStatement.executeQuery();
-			while(resultSet.next()){
+			while (resultSet.next()) {
 				userInDatabase = new User();
 				userInDatabase.setName(resultSet.getString(1));
-				userInDatabase.setDateOfBirth(resultSet.getString(2));
-				userInDatabase.setCourse(resultSet.getString(3));
+				userInDatabase.setCourse(resultSet.getString(2));
+				userInDatabase.setDateOfBirth(resultSet.getString(3));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException(e);
-		}finally {
+		} finally {
 			close(resultSet);
 			close(prepareStatement);
-			
+
 		}
 		manager.close(conn);
 		return userInDatabase;
 	}
 
 	private void close(PreparedStatement prepareStatement) {
-		try {
-			prepareStatement.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+		if (null != prepareStatement) {
+			try {
+				prepareStatement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new RuntimeException(e);
+			}
 		}
 	}
 
 	private void close(ResultSet resultSet) {
-		try {
-			resultSet.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-			throw new RuntimeException(e);
+		if (null != resultSet) {
+
+			try {
+				resultSet.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new RuntimeException(e);
+			}
 		}
 	}
 
@@ -65,8 +70,8 @@ public class Repository {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
 		try {
-			preparedStatement = conn.prepareStatement("INSERT INTO USER (name,course,dateOfBirth)" +
-					"VALUES (?, ?, ?)");
+			preparedStatement = conn
+					.prepareStatement("INSERT INTO USER (name,course,dateOfBirth)" + "VALUES (?, ?, ?)");
 			preparedStatement.setString(1, userFormulario.getName());
 			preparedStatement.setString(2, userFormulario.getCourse());
 			preparedStatement.setDate(3, new java.sql.Date(userFormulario.getDateOfBirth().getTime()));
@@ -74,69 +79,65 @@ public class Repository {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException(e);
-		}finally {
+		} finally {
 			close(preparedStatement);
 		}
-		
-		
+
 		manager.close(conn);
 	}
 
 	public void update(User userFormulario) {
 		Connection conn = manager.open(jdbcUrl);
 
-		// codigo sql que  inserta un usuario :P
+		// codigo sql que inserta un usuario :P
 		PreparedStatement preparedStatement = null;
 		try {
-			preparedStatement = conn.prepareStatement("UPDATE USER SET name = ?,course = ? ,dateOfBirth = ? WHERE name = ?");
+			preparedStatement = conn
+					.prepareStatement("UPDATE USER SET name = ?,course = ? ,dateOfBirth = ? WHERE name = ?");
 			preparedStatement.setString(1, userFormulario.getName());
 			preparedStatement.setString(2, userFormulario.getCourse());
 			preparedStatement.setDate(3, new java.sql.Date(userFormulario.getDateOfBirth().getTime()));
-			//Añado esta linea por la condicion , cuarto interrogante--> DUDA
+			// Añado esta linea por la condicion , cuarto interrogante--> DUDA
 			preparedStatement.setString(4, userFormulario.getName());
 
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException(e);
-		}finally {
+		} finally {
 			close(preparedStatement);
-      manager.close(conn);
+			manager.close(conn);
 		}
-		
 
-
-		
 	}
 
 	public List<User> searchAll() {
-		List<User> listUsers= new ArrayList<User>();
+		List<User> listUsers = new ArrayList<User>();
 		Connection conn = manager.open(jdbcUrl);
 		ResultSet resultSet = null;
 		PreparedStatement prepareStatement = null;
 		try {
 			prepareStatement = conn.prepareStatement("SELECT * FROM USER");
 			resultSet = prepareStatement.executeQuery();
-			while(resultSet.next()){
+			while (resultSet.next()) {
 				User userInDatabase = new User();
 				userInDatabase.setName(resultSet.getString(1));
 				userInDatabase.setCourse(resultSet.getString(2));
 				userInDatabase.setDateOfBirth(resultSet.getString(3));
-				
+
 				listUsers.add(userInDatabase);
 			}
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new RuntimeException(e);
-		}finally {
+		} finally {
 			close(resultSet);
 			close(prepareStatement);
-      manager.close(conn);
+			manager.close(conn);
 		}
-		
+
 		return listUsers;
 	}
-
 
 }

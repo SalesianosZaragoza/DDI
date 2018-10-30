@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="es.salesianos.model.*" %>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+   
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +14,7 @@
 	<form action="welcome" method="post">
 		<span>nombre:</span> 
 		
-		<input type="text" name="name" value="<c:out value="${editableUser.name}"/>"> <br/>
+		<input type="text" name="name" value="<c:out value="${editableUser.name}"/>" disabled="disabled"> <br/>
 		<span>fecha nac:</span> 
 		
 		<input type="date" name="dob" value="<c:out value="${editableUser.dateOfBirth}"/>"><br/>

@@ -1,6 +1,7 @@
 package com.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.entities.Person;
 
@@ -10,7 +11,7 @@ public interface PersonDao {
 
 	void insert(Person person);
 
-	Person selectById(int id);
+	Optional<Person> selectById(int id);
 
 	List<Person> selectAll();
 

@@ -1,10 +1,8 @@
+import java.util.List;
+import java.util.Optional;
+
 import com.daoimpl.PersonDaoH2Impl;
 import com.entities.Person;
-import com.util.ConnectionConfiguration;
-
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.List;
 
 public class App {
 
@@ -19,7 +17,7 @@ public class App {
 		pdi.insert(person);
 
 		/**Select by id**/
-		Person personSelect = pdi.selectById(2);
+		Optional<Person> personSelect = pdi.selectById(2);
 		System.out.println(person.getId()+", "+person.getFirstName()+", "+person.getLastName());
 
 		/**Delete person by id**/

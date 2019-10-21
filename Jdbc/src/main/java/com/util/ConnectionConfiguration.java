@@ -14,6 +14,8 @@ public class ConnectionConfiguration {
 			connection = DriverManager.getConnection("jdbc:h2:file:./src/main/resources/test","sa","");
 		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
+			throw new RuntimeException(e);
+//			System.out.println(e.getMessage());
 		}
 
 		return connection;

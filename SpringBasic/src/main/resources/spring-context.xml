@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd
+   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+   ">
+
+	<bean id="tecladoES" class="spring.Teclado">
+		<property name="idioma" value="Español" />
+		<property name="letras">
+			<util:list value-type="spring.Tecla">
+				<ref bean="enter" />
+				<ref bean="space" />
+				<ref bean="esc" />
+				<ref bean="tab" />
+			</util:list>
+		</property>
+	</bean>
+	
+	<bean id="tecladoFR" class="spring.Teclado">
+		<property name="idioma" value="Frances" />
+	</bean>
+	<bean id="monitor" class="spring.Monitor">
+		<property name="altavoces" ref="altavoz"></property>
+	</bean>
+	<bean id="altavoz" class="spring.Altavoz">
+	</bean>
+	<bean id="raton" class="spring.Raton">
+	</bean>
+
+
+	<bean id="tab" class="spring.Tecla">
+		<constructor-arg>
+			<value>TAB</value>
+		</constructor-arg>
+	</bean>
+
+	<context:component-scan
+		base-package="spring,context" />
+	<context:annotation-config />
+
+
+</beans>

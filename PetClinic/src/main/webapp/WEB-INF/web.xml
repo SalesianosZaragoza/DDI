@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_1.xsd"
+	version="3.1">
+	<display-name>HelloWorld Application</display-name>
+	<description>
+		This is a simple web application with a source code
+		organization
+		based on the recommendations of the Application
+		Developer's Guide.
+	</description>
+	<servlet>
+		<servlet-name>addOwnerServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.addOwnerServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>listado</servlet-name>
+		<servlet-class>es.salesianos.servlet.ListadoOwnerServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>updateOwnerServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.updateOwnerServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>editOwnerServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.editOwnerServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>confirmDeleteOwnerServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.ConfirmDeleteOwnerServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>deleteOwnerServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.deleteOwnerServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>AddPetServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.addPetServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>recoveryAddOwnerServlet</servlet-name>
+		<servlet-class>es.salesianos.servlet.recoveryAddOwnerServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>addOwnerServlet</servlet-name>
+		<url-pattern>inscribirAlumnos</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>listado</servlet-name>
+		<url-pattern>cargarListado</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>updateOwnerServlet</servlet-name>
+		<url-pattern>/updateOwner</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>editOwnerServlet</servlet-name>
+		<url-pattern>/editOwner</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>confirmDeleteOwnerServlet</servlet-name>
+		<url-pattern>/confirmDeleteOwner</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>deleteOwnerServlet</servlet-name>
+		<url-pattern>/deleteOwner</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>recoveryAddOwnerServlet</servlet-name>
+		<url-pattern>/recoveryAddCodOwner</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AddPetServlet</servlet-name>
+		<url-pattern>/addPet</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

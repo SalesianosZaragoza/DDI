@@ -11,10 +11,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<div>editando el elemento <c:out value="${editableUser.name}"/></div>
 	<form action="welcome" method="post">
 		<span>nombre:</span> 
 		
-		<input type="text" name="name" value="<c:out value="${editableUser.name}"/>" disabled="disabled"> <br/>
+		<input type="hidden" name="name" value="<c:out value="${editableUser.name}"/>" > <br/>
 		<span>fecha nac:</span> 
 		
 		<input type="date" name="dob" value="<c:out value="${editableUser.dateOfBirth}"/>"><br/>

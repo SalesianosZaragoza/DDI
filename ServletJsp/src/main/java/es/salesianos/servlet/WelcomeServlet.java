@@ -24,6 +24,7 @@ public class WelcomeServlet extends HttpServlet{
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		User user = service.assembleUserFromRequest(req);
+		System.out.println("usuario:"+user);
 		service.insertOrUpdate(user);
 		service.calculateAgeAndAddIntoRequest(req, user.getDateOfBirth());
 		redirect(req,resp);

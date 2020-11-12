@@ -18,7 +18,7 @@
 </form>
 
 <% 
- List<User> users = (List<User>)request.getAttribute("listAllUsers");
+ List<UserClassroomDto> users = (List<UserClassroomDto>)request.getAttribute("listAllUsers");
  out.println(users);
  pageContext.setAttribute("users", users);
 %>
@@ -35,7 +35,6 @@
 	<thead>
 		<tr>
 			<td>Nombre</td>
-			<td>Fecha</td>
 			<td>Curso</td>
 			<td>Opciones</td>
 		</tr>
@@ -43,10 +42,9 @@
 	<tbody>
 		<c:forEach var="user1" items="${listAllUsers}">
 			<tr>
-				<td><c:out value="${user1.name}"/> </td>
-				<td><c:out value="${user1.dateOfBirth}"/> </td>
-				<td><c:out value="${user1.course}"/> </td>
-				<td><a href="/edit?id=${user1.name}">EDITAR</a> </td>
+				<td><c:out value="${user1.userName}"/> </td>
+				<td><c:out value="${user1.classroomName}"/> </td>
+				<td><a href="/edit?id=${user1.userName}">EDITAR</a> </td>
 				
 	    	</tr>
 		</c:forEach>
@@ -75,16 +73,13 @@
 <%
 
 if(null != users && !users.isEmpty()){
-	for (User user2 : users) {
+	for (UserClassroomDto user2 : users) {
 		out.println("<tr>");
 		out.println("<td>");
-		out.println(user2.getName());
+		out.println(user2.getUserName());
 		out.println("</td>");
 		out.println("<td>");
-		out.println(user2.getCourse());
-		out.println("</td>");
-		out.println("<td>");
-		out.println(user2.getDateOfBirth());
+		out.println(user2.getClassroomName());
 		out.println("</td>");
 		out.println("</tr>");
 	}

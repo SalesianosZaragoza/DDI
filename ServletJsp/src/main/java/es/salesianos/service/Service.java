@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import es.salesianos.connection.ConnectionH2;
 import es.salesianos.connection.ConnectionManager;
 import es.salesianos.model.User;
+import es.salesianos.model.UserClassroomDto;
 import es.salesianos.model.assembler.UserAssembler;
 import es.salesianos.repository.Repository;
 import es.salesianos.utils.DateConverter;
@@ -39,7 +40,7 @@ public class Service {
 	}
 	
 	
-	public List<User> listAllUsers() {
+	public List<UserClassroomDto> listAllUsers() {
 		return repository.searchAll();
 	}
 	

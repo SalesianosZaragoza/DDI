@@ -9,10 +9,8 @@ public class UserAssembler {
 	public static User assembleUserFrom(HttpServletRequest req) {
 		User user = new User();
 		String nombre = req.getParameter("name");
-		String course = req.getParameter("course");
 		String dateOfBirth = req.getParameter("dob");
 		user.setName(nombre);
-		user.setCourse(course);
 		user.setDateOfBirth(dateOfBirth);
 		return user;
 	}

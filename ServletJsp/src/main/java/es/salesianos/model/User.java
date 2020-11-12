@@ -7,7 +7,7 @@ import java.util.Date;
 public class User {
 
 	private String name;
-	private String course;
+	private Integer course;
 	private Date dateOfBirth;
 	private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -17,14 +17,6 @@ public class User {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getCourse() {
-		return course;
-	}
-
-	public void setCourse(String course) {
-		this.course = course;
 	}
 
 	public Date getDateOfBirth() {
@@ -48,7 +40,15 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [name=" + name + ", course=" + course + ", dateOfBirth=" + dateOfBirth + ", sdf=" + sdf + "]";
+		return "User [name=" + name + ", course=" + getCourse() + ", dateOfBirth=" + dateOfBirth + ", sdf=" + sdf + "]";
+	}
+
+	public Integer getCourse() {
+		return course;
+	}
+
+	public void setCourse(Integer course) {
+		this.course = course;
 	}
 	
 	

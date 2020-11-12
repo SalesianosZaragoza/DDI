@@ -14,8 +14,6 @@
 		<span>fecha nac:</span> 
 		
 		<input type="date" name="dob"><br/>
-		<span>curso:</span> 
-		<input type="text" name="course"> <br/>
 		<input type="submit">
 	</form>
 	</body>

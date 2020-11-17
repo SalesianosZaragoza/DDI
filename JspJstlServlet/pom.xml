@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>Ejemplo Servlet y jstl sencillo</name>
+	<name>Ejemplo Servlet y jstl sencillo : Pilares 02</name>
 	
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->

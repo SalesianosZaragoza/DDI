@@ -13,7 +13,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Jdbc connection example</name>
+	<name>Jdbc connection example : Jdbc 01</name>
 
 	<dependencies>
 		<dependency>

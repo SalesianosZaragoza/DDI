@@ -12,7 +12,7 @@
 	<groupId>es.salesianos</groupId>
 	<artifactId>servletMascotas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Clinica veterinaria servlet</name>
+	<name>Clinica veterinaria servlet : ServletMascotas 06</name>
 	<packaging>war</packaging>
 
 	<dependencies>

@@ -21,7 +21,6 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import es.salesianos.service.Service;
 
-@Ignore
 @RunWith(MockitoJUnitRunner.class)
 public class WelcomeServletTest {
 
@@ -40,12 +39,13 @@ public class WelcomeServletTest {
 	public void setup() {
 		servlet.setService(service);
 		Mockito.when(req.getParameter("dob")).thenReturn("2000-12-10");
+		Mockito.when(req.getParameter("name")).thenReturn("john doe");
 	}
 	
 	@Test
 	public void testDoPost() throws ServletException, IOException {
 		servlet.doPost(req, resp);
-		assertEquals("15", req.getAttribute("age"));
+		assertEquals("19", req.getAttribute("age"));
 	}
 	
 	class MockedWelcomeServlet extends WelcomeServlet{

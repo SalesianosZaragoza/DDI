@@ -14,5 +14,8 @@
 		<a href="listOwner">Quiero mostrar la lista de los alumnos y
 			sus mascotas</a>
 	</div>
+	<div>
+		<a href="addActivity">Quiero añadir una actividad</a>
+	</div>
 </body>
 </html>

@@ -17,5 +17,9 @@
 	<div>
 		<a href="addActivity">Quiero añadir una actividad</a>
 	</div>
+	<div>
+		<a href="addActivityFromHtmlSimpleForm">Quiero añadir una actividad desde un formulario html normal</a>
+	</div>
+	
 </body>
 </html>

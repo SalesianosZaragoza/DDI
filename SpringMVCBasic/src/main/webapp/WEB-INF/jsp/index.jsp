@@ -13,7 +13,7 @@
 </head>
 <body>
 
-	<form:form action="recipeInsert" method="post">
+	<form:form action="recipeInsert" method="post"  modelAttribute="recipe">
 		<span>nombre de la receta:</span>
 		<form:input type="text" path="name" />
 		<input type="submit" value="Guardar nombre receta" />
@@ -26,7 +26,7 @@
 	<br />
 
 
-	<form:form action="ingredientInsert" method="post">
+	<form:form action="ingredientInsert" method="post"  modelAttribute="recipe">
 		<span>nuevo ingrediente:</span>
 		<form:input type="text" path="ingredientName" />
 		<input type="submit" value="guardar ingrediente"/>
@@ -53,7 +53,7 @@
 
 
 
-	<form:form action="cookingToolInsert" method="post">
+	<form:form action="cookingToolInsert" method="post" modelAttribute="recipe">
 		<span>nuevo utensilio:</span>
 		<form:input type="text" path="cookingToolName" />
 		<input type="submit" value="guardar herramienta" />

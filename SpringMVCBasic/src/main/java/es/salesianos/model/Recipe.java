@@ -3,6 +3,8 @@ package es.salesianos.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+@Component
 public class Recipe {
 
 	private String name;

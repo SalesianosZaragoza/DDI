@@ -13,7 +13,7 @@
 </head>
 <body>
 
-	<form:form action="cookingTypeInsert" method="post">
+	<form:form action="cookingTypeInsert" method="post" modelAttribute="cookingType">
 		<span>tipo de cocina:</span>
 		<form:input type="text" path="name" />
 		<input type="submit"/>

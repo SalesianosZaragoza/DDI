@@ -24,8 +24,9 @@ public class CookingTypeController {
 	@GetMapping("/CookingType")
 	public ModelAndView index() {
 		log.debug("entrando a insertar nuevo tipo de cocina");
-		ModelAndView modelAndView = new ModelAndView("cookingType", "command", new CookingType());
+		ModelAndView modelAndView = new ModelAndView("cookingType");
 		modelAndView.addObject("cookingTypes", service.listAll());
+		modelAndView.addObject("cookingType", new CookingType());
 		return modelAndView;
 	}
 
@@ -33,7 +34,9 @@ public class CookingTypeController {
 	public ModelAndView create(@ModelAttribute("cookingType") CookingType cookingType) {
 		log.debug("inserting cookingType");
 		service.insert(cookingType);
-		return new ModelAndView("cookingType", "command", new CookingType());
+		ModelAndView modelAndView = new ModelAndView("cookingType");
+		modelAndView.addObject("cookingType", new CookingType());
+		return modelAndView;
 	}
 
 }

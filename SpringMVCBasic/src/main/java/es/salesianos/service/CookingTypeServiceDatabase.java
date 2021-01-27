@@ -13,9 +13,9 @@ import es.salesianos.repository.CookingTypeRepository;
 
 @Service
 @Profile("database")
-public class CookingTypeService implements es.salesianos.service.Service {
+public class CookingTypeServiceDatabase implements es.salesianos.service.Service {
 
-	private static Logger log = LogManager.getLogger(CookingTypeService.class);
+	private static Logger log = LogManager.getLogger(CookingTypeServiceDatabase.class);
 
 	@Autowired
 	private CookingTypeRepository repository;

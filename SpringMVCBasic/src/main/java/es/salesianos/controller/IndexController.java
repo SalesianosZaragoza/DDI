@@ -58,17 +58,17 @@ public class IndexController {
 		return modelAndView;
 	}
 	private void addPageData(Recipe recipeForm) {
-		if (!StringUtils.hasLength(recipeForm.getName())) {
+		if (StringUtils.hasLength(recipeForm.getName())) {
 			this.recipe.setName(recipeForm.getName());
 		}
 
-		if (!StringUtils.hasLength(recipeForm.getCookingToolName())) {
+		if (StringUtils.hasLength(recipeForm.getCookingToolName())) {
 			CookingTool cookingTool = new CookingTool();
 			cookingTool.setName(recipeForm.getCookingToolName());
 			recipeForm.setCookingToolName("");
 			this.recipe.getTools().add(cookingTool);
 		}
-		if (!StringUtils.hasLength(recipeForm.getIngredientName())) {
+		if (StringUtils.hasLength(recipeForm.getIngredientName())) {
 			Ingredient ingredient = new Ingredient();
 			ingredient.setName(recipeForm.getIngredientName());
 			recipeForm.setIngredientName("");

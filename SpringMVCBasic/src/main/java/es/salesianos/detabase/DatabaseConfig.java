@@ -31,5 +31,17 @@ public class DatabaseConfig {
 		dataSource.setPassword("");
 		return dataSource;
 	}
+	
+	@Bean
+	@Profile(value = "postgres")
+	public DriverManagerDataSource postgresDataSource() {
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setDriverClassName("org.pstgres.Driver");
+		dataSource.setUrl("jdbc:localhost:5432");
+		dataSource.setUsername("sa");
+		dataSource.setPassword("");
+		return dataSource;
+	}
+
 
 }

@@ -58,7 +58,6 @@ public class IndexController {
 		return modelAndView;
 	}
 	private void addPageData(Recipe recipeForm) {
-
 		if (!StringUtils.hasLength(recipeForm.getName())) {
 			this.recipe.setName(recipeForm.getName());
 		}

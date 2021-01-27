@@ -17,10 +17,10 @@
 		<span>nombre de la receta:</span>
 		<form:input type="text" path="name" />
 		<input type="submit" value="Guardar nombre receta" />
+	El nombre de la receta es <span><c:out value="${recipe.name}" /></span>
 	</form:form>
 	<br />
 	<br />
-	El nombre de la receta es <span><c:out value="${recipe.name}" /></span>
 	<br />
 	<br />
 	<br />

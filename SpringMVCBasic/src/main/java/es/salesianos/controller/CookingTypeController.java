@@ -36,6 +36,7 @@ public class CookingTypeController {
 		service.insert(cookingType);
 		ModelAndView modelAndView = new ModelAndView("cookingType");
 		modelAndView.addObject("cookingType", new CookingType());
+		modelAndView.addObject("cookingTypes", service.listAll());
 		return modelAndView;
 	}
 

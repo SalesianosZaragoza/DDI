@@ -3,7 +3,6 @@
                              http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-
 	<groupId>es.salesianos.edu</groupId>
 	<artifactId>ddi</artifactId>
 	<packaging>pom</packaging>
@@ -26,7 +25,6 @@
 		<module>SpringMVCBasic</module>
 	</modules>
 
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -40,8 +38,6 @@
 
 	<build>
 		<plugins>
-			
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

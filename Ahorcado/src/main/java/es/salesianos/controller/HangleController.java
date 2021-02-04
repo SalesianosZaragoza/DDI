@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import es.salesianos.model.Dificulty;
 import es.salesianos.model.WordList;
@@ -26,12 +27,12 @@ public class HangleController {
 	Integer tries;
 	String userInput;
 	String feedback;
-	@GetMapping(path = "/")
+	@GetMapping("/")
 	public String index() {
 		return "index";
 	}
 
-	@GetMapping(path = "yieldRandomSolutionWord")
+	@GetMapping("/yieldRandomSolutionWord")
 	public String generateAnswer() {
 
 		int rnd = new Random().nextInt(wordlist.getWordList().size());
@@ -41,8 +42,8 @@ public class HangleController {
 		return "index";
 	}
 
-	@PostMapping
-	public void checkAnswer(String userInput) {
+	@PostMapping("/checkAnswer")
+	public String checkAnswer(@RequestParam String userInput) {
 		if (userInput.equalsIgnoreCase(correctAnswer)) {
 			log.info("Has ganado");
 			feedback = "Los has logrado has acertado la palabra";
@@ -50,9 +51,9 @@ public class HangleController {
 		} else {
 			int rnd = new Random().nextInt(correctAnswer.length());
 			log.info("pista:" + correctAnswer.charAt(rnd));
-			feedback = String.valueOf(correctAnswer.charAt(rnd));
+			feedback = "pista:" +String.valueOf(correctAnswer.charAt(rnd));
 		}
-
+		return "index";
 	}
 
 }

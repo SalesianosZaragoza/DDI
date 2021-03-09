@@ -31,7 +31,7 @@ public class OwnerRestController {
 	@ResponseBody
 	public String listAllOwnersPost() {
 		List<Owner> owners = service.listAll();
-		return "Thanks For using Post!!!";
+		return "<div>Thanks For using Post!!!</div>";
 	}
 
 	// http:localhost:8080/api/listAllOwners

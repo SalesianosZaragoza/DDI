@@ -23,7 +23,8 @@
 		<module>SpringbootBasic</module>
 		<module>SpringJpa</module>
 		<module>SpringMVCBasic</module>
-    <module>Ahorcado</module>
+		<module>Mastermind</module>
+		<module>Ahorcado</module>
 	</modules>
 
 	<dependencyManagement>

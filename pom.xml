@@ -21,6 +21,7 @@
 		<module>SpringBootJsp</module>
 		<module>SpringBasic</module>
 		<module>SpringbootBasic</module>
+		<module>PUBG_exam</module>
 		<module>SpringJpa</module>
 		<module>SpringMVCBasic</module>
 		<module>Mastermind</module>

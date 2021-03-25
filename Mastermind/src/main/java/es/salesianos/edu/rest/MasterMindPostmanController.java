@@ -60,9 +60,6 @@ public class MasterMindPostmanController {
 	@GetMapping(path = "/checkAnswer", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<UserAnswer> checkAnswer(@RequestBody UserAnswer answer) {
 		String[] input = answer.getAnswer();
-		input[1].toString();
-		String[] newInput = (String[]) Arrays.stream(input).map((in) -> in.substring(0, 2)).toArray();
-
 		if (input.length != gameOptions.getSize()) {
 			userAnswer.setMessage("answer size invalid");
 			userAnswer.setReason("expected max size: " + gameOptions.getSize());

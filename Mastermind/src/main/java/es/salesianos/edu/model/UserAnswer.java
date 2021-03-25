@@ -1,31 +1,31 @@
 package es.salesianos.edu.model;
 
 public class UserAnswer {
-private String[] answer;
-private String reason;
-private String message;
+	private String[] answer;
+	private String reason;
+	private String message;
 
-public String[] getAnswer() {
-	return answer;
-}
+	public String[] getAnswer() {
+		return answer;
+	}
 
-public void setAnswer(String[] answer) {
-	this.answer = answer;
-}
+	public void setAnswer(String[] answer) {
+		this.answer = answer;
+	}
 
-public String getReason() {
-	return reason;
-}
+	public String getMessage() {
+		return message;
+	}
 
-public void setReason(String reason) {
-	this.reason = reason;
-}
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
-public String getMessage() {
-	return message;
-}
+	public String getReason() {
+		return reason;
+	}
 
-public void setMessage(String message) {
-	this.message = message;
-}
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
 }

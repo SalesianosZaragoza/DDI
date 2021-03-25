@@ -82,7 +82,8 @@ public class MasterMindPostmanController {
 
 	@PostMapping(path = "/checkTries", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<GameOptions> checkTries() {
-		gameOptions.setTries(gameOptions.getTries() - tries);
+		gameOptions.setLefttries(gameOptions.getTries() - tries);
+
 		return new ResponseEntity<GameOptions>(gameOptions, HttpStatus.CREATED);
 	}
 	

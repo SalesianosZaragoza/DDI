@@ -102,25 +102,18 @@ public class MasterMindPostmanController {
 	@GetMapping(path = "/listScoreboard", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Record> listScoreboard(@RequestParam int maxSize) {
 		fillTable();
-		List<Record> listToShow = new ArrayList<Record>();
-		for (int i = 0; i < maxSize; i++) {
-			listToShow.add(recordTable.get(i));
-		}
-		return listToShow;
+		return recordTable.stream().limit(maxSize).collect(Collectors.toList());
 	}
 
 	public void fillTable() {
-		String initials[] = { "gs", "ja", "as", "ml" };
-		String names[] = { "Gorka Sanz", "Juan Apellaniz", "Agustín Solé", "Merche López" };
-		int recordTries[] = { 3, 4, 5, 6 };
-		for (int i = 0; i < initials.length; i++) {
-			Record recordToAdd = new Record();
-			recordToAdd.setInitial(initials[i]);
-			recordToAdd.setName(names[i]);
-			recordToAdd.setTries(recordTries[i]);
-			recordToAdd.setMessage("");
-			recordTable.add(recordToAdd);
-		}
+		Record recordToAdd = new Record("gs","Gorka Sanz", 3);
+		Record recordToAdd1 = new Record("gs","Gorka Sanz", 3);
+		Record recordToAdd2 = new Record("gs","Gorka Sanz", 3);
+		Record recordToAdd3 = new Record("gs","Gorka Sanz", 3);
+		recordTable.add(recordToAdd);
+		recordTable.add(recordToAdd);
+		recordTable.add(recordToAdd);
+		recordTable.add(recordToAdd);
 
 	}
 

@@ -33,9 +33,11 @@
 			<div class="col">
 				
 				<div class="btn-group" data-toggle="buttons">
-					<label class="btn btn-primary active" for="input1">
-						<input id="input1" type="checkbox" checked autocomplete="off">Checkbox 1 is selected
+					<label id="label1" aria-label="input1" class="btn btn-primary active" for="input1">
+						<input id="input1" type="checkbox" aria-labelledby="label1" checked autocomplete="off">Checkbox 1 is selected
 					</label>
+						
+					
 					
 					<label class="btn btn-primary">
 						<input type="checkbox" autocomplete="off">Checkbox 2

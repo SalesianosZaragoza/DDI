@@ -3,14 +3,13 @@ package es.salesianos.servlet;
 import java.io.IOException;
 import java.util.Optional;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 
 import es.salesianos.model.Activity;
 import es.salesianos.repository.ActividadesRepository;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 public class InsertDataServlet extends BaseServlet{
 
@@ -22,6 +21,12 @@ public class InsertDataServlet extends BaseServlet{
 		Activity activity = getActivityFromRequest(req);
 		repository.insert(activity);
 		redirect(req, resp, "/feedback.jsp");
+	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.doGet(req, resp);
 	}
 
 }

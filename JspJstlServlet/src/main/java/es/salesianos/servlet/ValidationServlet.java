@@ -9,12 +9,14 @@ import es.salesianos.connection.H2Connection;
 import es.salesianos.model.Activity;
 import es.salesianos.repository.ActividadesRepository;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class ValidationServlet
  */
+@WebServlet("/Validation")
 public class ValidationServlet extends BaseServlet {
 	private static final long serialVersionUID = 1L;
        

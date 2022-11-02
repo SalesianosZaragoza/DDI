@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 
@@ -9,13 +8,13 @@
 	<packaging>war</packaging>
 
 	<name>Ejemplo Servlet y jstl sencillo : Pilares 02</name>
-	
+
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
 		<dependency>
-		    <groupId>jakarta.servlet</groupId>
-		    <artifactId>jakarta.servlet-api</artifactId>
-		    <version>6.0.0</version>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<version>6.0.0</version>
 		</dependency>
 
 
@@ -26,12 +25,12 @@
 			<version>2.1.210</version>
 		</dependency>
 
-	
+
 		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
+			<groupId>jakarta.servlet.jsp.jstl</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+			<version>3.0.0</version>
 		</dependency>
 
 
@@ -48,16 +47,16 @@
 					<scanIntervalSeconds>1</scanIntervalSeconds>
 				</configuration>
 			</plugin>
-      <plugin>
-		    <groupId>org.apache.maven.plugins</groupId>
-		    <artifactId>maven-war-plugin</artifactId>
-		    <version>3.3.1</version>
-		</plugin>
-		<plugin>
-		      <groupId>org.apache.maven.plugins</groupId>
-		      <artifactId>maven-compiler-plugin</artifactId>
-		      <version>3.8.1</version>
-		</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+			</plugin>
 		</plugins>
 	</build>
 

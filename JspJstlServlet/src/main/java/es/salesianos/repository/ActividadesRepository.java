@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import es.salesianos.connection.AbstractConnection;
 import es.salesianos.connection.H2Connection;
@@ -61,6 +62,34 @@ public class ActividadesRepository {
 			manager.close(conn);
 		}
 		return isRealizable;
+	}
+
+
+	public List<Activity> listAll() {
+		List<Activity> lista = null;
+		Connection conn = manager.open(jdbcUrl);
+		PreparedStatement preparedStatement = null;
+		try {
+			preparedStatement = conn
+					.prepareStatement("SELECT * FROM ACTIVITY ");
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while (resultSet.next()) {
+				Activity activity = new Activity();
+				activity.setAforo(resultSet.getInt("gauging"));
+				activity.setName(resultSet.getString("name"));
+				
+				lista.add(activity);
+			
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			manager.close(preparedStatement);
+			manager.close(conn);
+		}
+		return lista;
 	}
 
 	

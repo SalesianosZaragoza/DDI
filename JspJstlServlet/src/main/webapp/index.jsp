@@ -12,5 +12,7 @@
 		<span>Aforo</span>	<input type="text" id="gauging" name="gauging" /> <input type="submit" value="enviar" />
 	</form>
 	<a href="Validation.jsp">Quiero comprobar una actividad</a>
+		<a href="listActividades.jsp">Ver el listado de actividades</a>
+	
 </body>
 </html>

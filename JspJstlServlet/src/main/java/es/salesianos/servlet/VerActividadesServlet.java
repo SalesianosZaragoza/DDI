@@ -19,7 +19,7 @@ public class VerActividadesServlet extends HttpServlet {
 
 		List<Activity> actividades = repo.listAll();
 		req.setAttribute("lista", actividades);
-		RequestDispatcher dispatcher = getServletContext().getNamedDispatcher("listActivities.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listActivities.jsp");
 		dispatcher.forward(req, resp);
 	}
 }

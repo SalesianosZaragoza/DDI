@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import es.salesianos.connection.AbstractConnection;
@@ -66,7 +67,7 @@ public class ActividadesRepository {
 
 
 	public List<Activity> listAll() {
-		List<Activity> lista = null;
+		List<Activity> lista = new ArrayList<>();
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
 		try {

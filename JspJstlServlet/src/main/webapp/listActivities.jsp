@@ -14,9 +14,14 @@
 </form>
 <br/>
 <div>---------------------------------------------------------------------</div>
-<c:forEach var="activity" items="${requestScope.lista}">
+<c:forEach var="activity" items="${requestScope.lista}" varStatus="indice">
+	<c:out value="${indice.index}"/>
 	<c:out value="${activity.aforo}"/>
 	<c:out value="${activity.name}"/>
+	<!-- poener un enlace que llama un servlet le pasa
+	el parametro del name y el servlet mediante doGet con ese name
+	borra la actividad de la base de datos -->
+	<br/>
 </c:forEach>
 </body>
 </html>

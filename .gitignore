@@ -25,3 +25,7 @@ local.properties
 
 # Locally stored "Eclipse launch configurations"
 *.launch
+
+JspJstlServlet/src/main/resources/test.mv.db
+JspJstlServlet/src/main/resources/test.mv.db
+Jdbc/src/main/resources/test.mv.db

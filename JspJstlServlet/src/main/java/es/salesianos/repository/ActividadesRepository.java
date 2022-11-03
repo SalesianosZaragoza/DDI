@@ -93,5 +93,23 @@ public class ActividadesRepository {
 		return lista;
 	}
 
+
+	public void deleteWhereName(String item) {
+		Connection conn = manager.open(jdbcUrl);
+		PreparedStatement preparedStatement = null;
+		try {
+			preparedStatement = conn
+					.prepareStatement("DELETE FROM Activity WHERE name = ?");
+			preparedStatement.setString(1, item);
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		} finally {
+			manager.close(preparedStatement);
+			manager.close(conn);
+		}
+	}
+
 	
 }

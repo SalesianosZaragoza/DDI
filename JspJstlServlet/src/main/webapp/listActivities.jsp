@@ -18,6 +18,7 @@
 	<c:out value="${indice.index}"/>
 	<c:out value="${activity.aforo}"/>
 	<c:out value="${activity.name}"/>
+	<a href="/eliminar?item=${activity.name}">ELIMINAR</a> 
 	<!-- poener un enlace que llama un servlet le pasa
 	el parametro del name y el servlet mediante doGet con ese name
 	borra la actividad de la base de datos -->

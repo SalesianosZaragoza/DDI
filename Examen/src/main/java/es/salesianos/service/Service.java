@@ -2,8 +2,6 @@ package es.salesianos.service;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import es.salesianos.model.Actor;
 import es.salesianos.model.Director;
 import es.salesianos.model.Pelicula;

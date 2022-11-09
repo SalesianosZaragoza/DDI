@@ -13,7 +13,7 @@
 	<artifactId>springjpa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springjpa</name>
-	<description>Spring Boot and Jpa</description>
+	<description>Spring Boot and Jpa : 15</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -101,8 +101,8 @@
 							<goal>install-node-and-npm</goal>
 						</goals>
 						<configuration>
-							<nodeVersion>v6.11.4</nodeVersion>
-							<npmVersion>3.10.10</npmVersion>
+							<nodeVersion>v17.2.0</nodeVersion>
+							<npmVersion>8.19.2</npmVersion>
 						</configuration>
 					</execution>
 					<execution>

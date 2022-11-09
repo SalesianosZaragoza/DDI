@@ -13,7 +13,7 @@ import es.salesianos.model.Activity;
 
 public class ActividadesRepository {
 
-	private static final String jdbcUrl = "jdbc:h2:file:./src/main/resources/test;INIT=RUNSCRIPT FROM 'classpath:scripts/create.sql'";
+	private static final String jdbcUrl = "jdbc:h2:file:./src/main/resources/test;";
 	AbstractConnection manager = new H2Connection();
 
 

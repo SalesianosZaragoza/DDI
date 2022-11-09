@@ -10,22 +10,22 @@
 	<name>DesarrolloInterfaces</name>
 
 	<modules>
-		<module>ServletJsp</module>
-		<module>Jdbc</module>
-		<module>Interfaces</module>
 		<module>Bootstrap</module>  
-		<module>Examen</module>   
+		<module>Jdbc</module>
 		<module>JspJstlServlet</module>  
+		<module>Interfaces</module>
+		<module>ServletJsp</module>
+		<module>Examen</module>   
 		<module>PetClinic</module>  
 		<module>ServletSpring</module>    
-		<module>SpringBootJsp</module>
-		<module>SpringBasic</module>
 		<module>SpringbootBasic</module>
+		<module>SpringBasic</module>
+		<module>SpringBootJsp</module>
 		<module>PUBG_exam</module>
-		<module>SpringJpa</module>
 		<module>SpringMVCBasic</module>
-		<module>Mastermind</module>
 		<module>Ahorcado</module>
+		<module>Mastermind</module>
+		<module>SpringJpa</module>
 	</modules>
 
 	<dependencyManagement>

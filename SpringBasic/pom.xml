@@ -6,7 +6,7 @@
 	<artifactId>springbasic</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-
+	<name>another springboot web basico : 09</name>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 		<dependency>

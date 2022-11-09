@@ -13,7 +13,7 @@
 		<version>2.4.2</version>
 	</parent>
 
-	<name>ahorcado example</name>
+	<name>ahorcado example : Ahorcado 13</name>
 
 	<dependencies>
 

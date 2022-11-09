@@ -47,7 +47,7 @@ public class IndexController {
 			person.setName(personForm.getName());
 		}
 
-		if (!StringUtils.hasLength(personForm.getItem())) {
+		if (!StringUtils.hasLength(personForm.getItem().getName())) {
 			Item item = new Item();
 			if (personForm.getItem().getType().equalsIgnoreCase("weapon")) {
 

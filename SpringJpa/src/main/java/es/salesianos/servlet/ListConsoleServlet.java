@@ -30,7 +30,7 @@ public class ListConsoleServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Console example = new Console();
 		example.setName("nintendo");
-		List<Console> consoles = repository.findAll(example );
+		List<Console> consoles = repository.findAll();
 		req.setAttribute("consoles", consoles);
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/");
 		dispatcher.forward(req, resp);

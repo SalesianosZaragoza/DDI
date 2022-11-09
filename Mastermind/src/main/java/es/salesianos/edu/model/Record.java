@@ -5,6 +5,17 @@ public class Record {
 	private String name;
 	private int tries;
 	private String message;
+	
+	
+	public Record() {
+	}
+	
+	public Record(String initial, String name, int tries) {
+		super();
+		this.initial = initial;
+		this.name = name;
+		this.tries = tries;
+	}
 
 	public int getTries() {
 		return tries;

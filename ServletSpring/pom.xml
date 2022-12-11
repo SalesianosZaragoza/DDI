@@ -53,7 +53,7 @@
 		<dependency>
 			<artifactId>spring-web</artifactId>
 			<groupId>org.springframework</groupId>
-			<version>5.2.1.RELEASE</version>
+			<version>6.0.0</version>
 		</dependency>
 		<dependency>
 			<artifactId>spring-context</artifactId>

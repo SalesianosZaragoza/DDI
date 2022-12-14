@@ -25,7 +25,6 @@
 		<module>SpringMVCBasic</module>
 		<module>Ahorcado</module>
 		<module>Mastermind</module>
-		<module>SpringJpa</module>
 	</modules>
 
 	<dependencyManagement>

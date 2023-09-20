@@ -5,7 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<!-- Bootstrap CSS v5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	
 	<style>
 		.red
@@ -38,7 +39,7 @@
 	</style>
 </head>
 <body>
-	<div class="container">
+	<div class="container"><!--tenemos rows anidadas, si dentro de uno los 12 trozos decidimos meter un elemento, ese trozo (o trozos, depende de lo que hayamos elegido) se vuelve a dividir en 12 trozos-->
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-6 red">
 				<div class="row">
@@ -52,7 +53,7 @@
 								1.1.2
 							</div>
 							
-							<div class="col-xl-4 pink">
+							<div class="col-xl-4 blue">
 								<div class="row">
 									<div class="offset-5 col-xl-4 red">
 										1.1.1.1.2
